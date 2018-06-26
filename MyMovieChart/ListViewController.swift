@@ -31,6 +31,22 @@ class ListViewController : UITableViewController {
         self.tableView.reloadData()
     }
     
+    func getThumbnailImage(_ index : Int) -> UIImage {
+        //인자값으로 받은 인덱스를 기반으로 해당하는 배열데이터를 읽어옴
+        let mvo = self.list[index]
+        
+        // 메모이제이션 : 저장된 이미지가 있으면 반환, 없을경우 내려받아 저장하고 반환.
+        if let savedImage = mvo.thumbnailImage {
+            return savedImage
+        } else {
+            let url : URL! = URL(string: mvo.thumbnail!)
+            let imageData = try! Data(contentsOf: url)
+            mvo.thumbnailImage = UIImage(data : imageData) // UIImage를 MovieVO 객체에 우선저장
+            
+            return mvo.thumbnailImage!
+        }
+    }
+    
     func callMovieAPI() {
         // 호핀 API 호출을 위한 URI를 생성
         let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=\(self.page)&count=30&genreId=&order=releasedateasc"
@@ -90,15 +106,21 @@ class ListViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = self.list[indexPath.row]
+        NSLog("호출된 행번호 : \(indexPath.row), 제목 : \(row.title!)")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! MovieCell
-        print(list.count)
+        
         
         cell.title.text = row.title
         cell.desc.text = row.description
         cell.opendate.text = row.opendate
         cell.rating.text = "\(row.rating!)"
         cell.thumbnail.image = row.thumbnailImage
+        
+        // 비동기 방식으로 섬네일 이미지를 읽어옴
+        DispatchQueue.main.async {
+            cell.thumbnail.image = self.getThumbnailImage(indexPath.row)
+        }
         
         return cell
     }
