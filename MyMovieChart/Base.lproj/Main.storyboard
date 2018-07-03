@@ -184,6 +184,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBi-Kg-kgf">
                                     <rect key="frame" x="168" y="7" width="39" height="30"/>
                                     <state key="normal" title="더보기"/>
+                                    <connections>
+                                        <action selector="more:" destination="R7c-CP-WEs" eventType="touchUpInside" id="jaw-D5-bvc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,6 +247,7 @@
                                     <outlet property="addr" destination="b6F-dI-l6H" id="bDP-G4-hM4"/>
                                     <outlet property="name" destination="DRa-J5-Imi" id="kl5-A1-rI2"/>
                                     <outlet property="tell" destination="jHF-wB-Nro" id="g2v-Ih-YDT"/>
+                                    <segue destination="q6S-Od-fSt" kind="show" identifier="segue_map" id="QTf-aE-gzf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -253,10 +257,43 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="영화관 정보" id="VIV-vo-nOK"/>
+                    <connections>
+                        <outlet property="more" destination="fBi-Kg-kgf" id="c6J-0g-jWF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bff-6k-B9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1948" y="793.8530734632684"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="RRj-LA-i5R">
+            <objects>
+                <viewController id="q6S-Od-fSt" customClass="TheaterViewController" customModule="MyMovieChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ua3-BJ-iBa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UaA-td-pE4">
+                                <rect key="frame" x="-0.5" y="7.5" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UaA-td-pE4" firstAttribute="height" secondItem="Ua3-BJ-iBa" secondAttribute="height" id="IGG-tN-f3e"/>
+                            <constraint firstItem="UaA-td-pE4" firstAttribute="centerY" secondItem="zxs-7B-mk3" secondAttribute="centerY" id="a8K-wK-fCL"/>
+                            <constraint firstItem="UaA-td-pE4" firstAttribute="centerX" secondItem="zxs-7B-mk3" secondAttribute="centerX" id="vGW-fp-Cby"/>
+                            <constraint firstItem="UaA-td-pE4" firstAttribute="width" secondItem="Ua3-BJ-iBa" secondAttribute="width" id="ykE-rW-JDl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zxs-7B-mk3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="HML-li-g1b"/>
+                    <connections>
+                        <outlet property="map" destination="UaA-td-pE4" id="0X4-qI-arn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8r-72-ucP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="794"/>
         </scene>
         <!--영화관-->
         <scene sceneID="Cpx-Ux-l9s">

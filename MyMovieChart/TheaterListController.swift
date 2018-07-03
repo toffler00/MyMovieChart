@@ -16,6 +16,8 @@ class TheaterListController: UITableViewController {
     // 읽어올 데이터의 시작위치
     var startPoint = 0
     
+    @IBOutlet weak var more: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +64,24 @@ class TheaterListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segue_map") {
+            // 실행된 세그의 식별자가 segue_map 일경우
+            let path = self.tableView.indexPath(for: sender as! UITableViewCell)
+            
+            let data = self.list[path!.row]
+            
+            //세그웨이가 이동할 목적지 뷰 컨트롤러 객체를 구하고, 선언된 param 변수에 데이터를 연결해준다.
+            (segue.destination as? TheaterViewController)?.param = data
+        }
+    }
+    
+    @IBAction func more(_ sender: Any) {
+        callTeaterAPI()
+        self.tableView.reloadData()
+    }
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

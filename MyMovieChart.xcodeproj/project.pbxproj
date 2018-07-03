@@ -16,6 +16,9 @@
 		627CF3A220EA338100FCA423 /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 627CF3A120EA338100FCA423 /* Trailer.png */; };
 		627CF3A420EA374000FCA423 /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF3A320EA374000FCA423 /* TheaterCell.swift */; };
 		627CF3A620EA383100FCA423 /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF3A520EA383100FCA423 /* TheaterListController.swift */; };
+		627CF3A920EB85C600FCA423 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627CF3A820EB85C600FCA423 /* MapKit.framework */; };
+		627CF3AB20EB85EE00FCA423 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627CF3AA20EB85EE00FCA423 /* WebKit.framework */; };
+		627CF3AD20EB863600FCA423 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF3AC20EB863600FCA423 /* TheaterViewController.swift */; };
 		6280C52120D13B8F00402CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6280C52020D13B8F00402CD0 /* AppDelegate.swift */; };
 		6280C52620D13B8F00402CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6280C52420D13B8F00402CD0 /* Main.storyboard */; };
 		6280C52820D13B9000402CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6280C52720D13B9000402CD0 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 		627CF3A120EA338100FCA423 /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
 		627CF3A320EA374000FCA423 /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
 		627CF3A520EA383100FCA423 /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
+		627CF3A820EB85C600FCA423 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		627CF3AA20EB85EE00FCA423 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		627CF3AC20EB863600FCA423 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		6280C51D20D13B8F00402CD0 /* MyMovieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6280C52020D13B8F00402CD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6280C52520D13B8F00402CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627CF3AB20EB85EE00FCA423 /* WebKit.framework in Frameworks */,
+				627CF3A920EB85C600FCA423 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,12 +75,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		627CF3A720EB85C600FCA423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				627CF3AA20EB85EE00FCA423 /* WebKit.framework */,
+				627CF3A820EB85C600FCA423 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6280C51420D13B8F00402CD0 = {
 			isa = PBXGroup;
 			children = (
 				6279CE8D20D3E9A100B230BB /* Resources */,
 				6280C51F20D13B8F00402CD0 /* MyMovieChart */,
 				6280C51E20D13B8F00402CD0 /* Products */,
+				627CF3A720EB85C600FCA423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +107,7 @@
 			children = (
 				6280C52020D13B8F00402CD0 /* AppDelegate.swift */,
 				6280C52420D13B8F00402CD0 /* Main.storyboard */,
+				627CF3AC20EB863600FCA423 /* TheaterViewController.swift */,
 				627CF3A320EA374000FCA423 /* TheaterCell.swift */,
 				6279CE8B20D3E7AB00B230BB /* MovieCell.swift */,
 				627CF3A520EA383100FCA423 /* TheaterListController.swift */,
@@ -180,6 +199,7 @@
 			files = (
 				6280C53520D1444E00402CD0 /* MovieVO.swift in Sources */,
 				627CF3A420EA374000FCA423 /* TheaterCell.swift in Sources */,
+				627CF3AD20EB863600FCA423 /* TheaterViewController.swift in Sources */,
 				6280C52120D13B8F00402CD0 /* AppDelegate.swift in Sources */,
 				627CF39E20E361C700FCA423 /* DetailViewController.swift in Sources */,
 				627CF3A620EA383100FCA423 /* TheaterListController.swift in Sources */,
