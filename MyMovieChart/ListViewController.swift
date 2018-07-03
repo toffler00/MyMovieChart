@@ -125,7 +125,29 @@ class ListViewController : UITableViewController {
         return cell
     }
     
+   
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("선택된 항은 \(indexPath.row) 번째 행입니다.")
+    }
+}
+extension ListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 실행된 세그웨이의 식별자가 "segue_ditail" 이라면
+        if segue.identifier == "segue_detail" {
+            // sender 인자를 캐스팅하여 테이블 셀 객체로 변환
+            let cell = sender as! MovieCell
+            
+            // 사용자가 클릭한 행을 찾는다.
+            let path = self.tableView.indexPath(for: cell)
+            
+            // API 영화 데이터 배열중 선택된 행에 대한 데이터를 추출한다.
+            let movieinfo = self.list[path!.row]
+            
+            // 행정보를 통해 선택된 영화 데이터를 찾은 다음, 목적지 뷰 컨트롤러의 mvo 변수에 대입한다.
+            let detailVC = segue.destination as? DetailViewController
+            detailVC?.mvo = movieinfo
+        }
     }
 }
