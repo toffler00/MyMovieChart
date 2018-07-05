@@ -84,6 +84,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		627CF3AE20ECD64F00FCA423 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6280C53220D13C7B00402CD0 /* ListViewController.swift */,
+				627CF39D20E361C700FCA423 /* DetailViewController.swift */,
+				627CF3A520EA383100FCA423 /* TheaterListController.swift */,
+				627CF3AC20EB863600FCA423 /* TheaterViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		627CF3AF20ECD67300FCA423 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6280C53420D1444E00402CD0 /* MovieVO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		627CF3B020ECD6A400FCA423 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = sources;
+			sourceTree = "<group>";
+		};
 		6280C51420D13B8F00402CD0 = {
 			isa = PBXGroup;
 			children = (
@@ -107,13 +133,11 @@
 			children = (
 				6280C52020D13B8F00402CD0 /* AppDelegate.swift */,
 				6280C52420D13B8F00402CD0 /* Main.storyboard */,
-				627CF3AC20EB863600FCA423 /* TheaterViewController.swift */,
 				627CF3A320EA374000FCA423 /* TheaterCell.swift */,
+				627CF3B020ECD6A400FCA423 /* sources */,
 				6279CE8B20D3E7AB00B230BB /* MovieCell.swift */,
-				627CF3A520EA383100FCA423 /* TheaterListController.swift */,
-				6280C53420D1444E00402CD0 /* MovieVO.swift */,
-				627CF39D20E361C700FCA423 /* DetailViewController.swift */,
-				6280C53220D13C7B00402CD0 /* ListViewController.swift */,
+				627CF3AF20ECD67300FCA423 /* Model */,
+				627CF3AE20ECD64F00FCA423 /* ViewController */,
 				6280C52720D13B9000402CD0 /* Assets.xcassets */,
 				6280C52920D13B9000402CD0 /* LaunchScreen.storyboard */,
 				6280C52C20D13B9000402CD0 /* Info.plist */,
